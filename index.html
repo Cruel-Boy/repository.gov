@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-param" content="_csrf-myap">
+    <meta name="csrf-token" content="_NrMF9WjY01t6wiIOveV3TLpxC1Cjtpl3kZW5ujX-z6MkZtOt5cqHBu9T-JVoeK_YLaeVRC-tS-JNjmDj7qzeQ==">
+    <title>Единый портал интерактивных государственных услуг</title>
+    <link href="./assets/d8517caef8dd37d97df732690454e50b/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/site.min.css" rel="stylesheet">
+    <link href="./css/site.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/logo_mobile.png" type="image/x-icon">
+    <style>
+        .nopad {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .captcha-gif {
+            height: 32px;
+            margin: 0 10px 0 10px;
+        }
+
+        .navbar-brand img {
+            width: 170px;
+            height: 55px;
+            object-fit: contain;
+            margin-top: 2px;
+        }
+
+        .lang_part {
+            border-radius: 4px;
+            position: relative;
+            background: #EDF5FF;
+            padding: 6px 8px;
+            display: flex !important;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            width: 58px;
+            padding: 0;
+        }
+
+        .navbar-nav.navbar-right {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .navbar-right .dropdown-menu {
+            right: -49px;
+            left: auto;
+            top: 69px;
+        }
+
+        .lang_part a {
+            width: 100%;
+            display: flex !important;
+            align-content: center;
+            justify-content: center;
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1;
+            text-decoration: none;
+            height: 70px;
+            padding-top: 26px;
+        }
+
+        #a_label {
+            background: transparent;
+        }
+
+        .lang_part .col-xs-8 {
+            width: 100%;
+            padding: 0;
+            height: 100%;
+        }
+
+        .lang_part a span {
+            margin-top: 5px;
+        }
+
+        .dropdown-menu a {
+            margin: 0;
+            height: auto;
+            padding-top: 0;
+            font-size: 14px;
+            font-weight: normal;
+            text-transform: none;
+            padding: 8px 15px;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+    <script>
+        var inputmask_fea305f5 = {
+            "mask": "9999"
+        };
+    </script>
+</head>
+
+<body>
+    <div class="wrap another_wrap">
+        <nav id="w2" class="navbar-inverse navbar-fixed-top navbar">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w2-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="https://my.gov.uz">
+                        <img src="./img/new/logotype.svg">
+                    </a>
+            </div>
+            <div id="w2-collapse" class="collapse navbar-collapse">
+                <ul id="w5" class="navbar-nav navbar-right nav">
+                    <li>
+                        <a href="https://my.gov.uz" id="home-link">Главная</a>
+                    </li>
+                    <li class="dropdown lang_part">
+                        <div class="col-xs-8 nopade">
+                            <div class="lang">
+                                <div class="dropdown">
+                                    <a href="#" id="a_label" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ru<span class="caret"></span></a>
+                                    <ul id="w4" class="dropdown-menu">
+                                        <li><a href="#" data-lang="uz" tabindex="-1">Ўзбекча</a></li>
+                                        <li><a href="#" data-lang="oz" tabindex="-1">O'zbekcha</a></li>
+                                        <li><a href="#" data-lang="ru" tabindex="-1">Русский</a></li>
+                                        <li><a href="#" data-lang="en" tabindex="-1">English</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="https://id.egov.uz/?client_id=mygove_uz_test&token_id=3b4f34c0-2f1b-4e95-98ef-f7b426fa5f29&method=IDPW" id="login-link">Войти</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="container_in">
+                <div class="row dflex_repo_row">
+                    <div class="col-md-6 vcenter vcenter_first">
+                        <div id="w0" class="alert-warning alert fade in">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <span id="auth-message">Пожалуйста пройдите авторизацию чтобы система определила вас. Если документ принадлежит вам, введения ПИН кода не требуется.</span>
+                            <a href="/ru/auth/login" id="auth-link">Нажмите здесь для авторизации</a>
+                        </div>
+                        <h3 class="repo_qr_info" id="pin-title">Введите PIN-код для просмотра документа</h3>
+                        <form id="w1" class="pinForm col-md-10" onsubmit="openDocument(event)">
+                            <input type="hidden" name="_csrf-myap" value="_NrMF9WjY01t6wiIOveV3TLpxC1Cjtpl3kZW5ujX-z6MkZtOt5cqHBu9T-JVoeK_YLaeVRC-tS-JNjmDj7qzeQ==">
+                            <div class="form-group field-repopinmodel-pin_code required">
+                                <label class="control-label" for="repopinmodel-pin_code" id="pin-label">ПИН код</label>
+                                <input type="text" id="repopinmodel-pin_code" class="form-control" name="guid" autocomplete="off" aria-required="true">
+                                <div class="help-block"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary pull-center" id="submit-btn">Открыть</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6 vcenter">
+                        <img src="./img/pin_code_document.jpg" style="margin: 0 auto;display:block;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="">
+            <p class="pull-center">© <a href="http://uzinfocom.uz/" target="_blank">UZINFOCOM</a> 2025</p>
+            <p class="pull-right" id="framework-text">Работает на <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></p>
+        </div>
+    </footer>
+
+    <script src="./js/yii_assets/jquery.min.js"></script>
+    <script src="./js/yii_assets/bootstrap.min.js"></script>
+    <script src="./js/yii_assets/yii.min.js"></script>
+    <script src="./assets/a573d3e4b19f49715d7173d6f3faf4d2/jquery.inputmask.bundle.js"></script>
+    <script>
+        // Тексты для разных языков
+        const translations = {
+            ru: {
+                title: 'Единый портал интерактивных государственных услуг',
+                home: 'Главная',
+                login: 'Войти',
+                authMessage: 'Пожалуйста пройдите авторизацию чтобы система определила вас. Если документ принадлежит вам, введения ПИН кода не требуется.',
+                authLink: 'Нажмите здесь для авторизации',
+                pinTitle: 'Введите PIN-код для просмотра документа',
+                pinLabel: 'ПИН код',
+                submitBtn: 'Открыть',
+                pinInfo: 'PIN-код размещается рядом с QR-кодом документа',
+                frameworkText: 'Работает на Yii Framework',
+                errorPinRequired: 'Пожалуйста, введите ПИН-код',
+                errorDocumentNotFound: 'Документ не найден'
+            },
+            uz: {
+                title: 'Интерактив давлат хизматларининг бирлашган портали',
+                home: 'Бош саҳифа',
+                login: 'Кириш',
+                authMessage: 'Илтимос, тизим сизни аниқлаши учун авторизациядан ўтинг. Агар ҳужжат сизга тегишli bўlса, ПИН кодни киритиш талаб қилинмайди.',
+                authLink: 'Авторизация учун босинг',
+                pinTitle: 'Ҳужжатни кўриш учун ПИН кодни киритинг',
+                pinLabel: 'ПИН код',
+                submitBtn: 'Очиш',
+                pinInfo: 'ПИН код ҳужжатнинг QR коди ёнида жойлашган',
+                frameworkText: 'Yii Framework асосида ишлайди',
+                errorPinRequired: 'Илтимос, ПИН кодни киритинг',
+                errorDocumentNotFound: 'Hujjat topilmadi'
+            },
+            oz: {
+                title: 'Interaktiv davlat xizmatlarining birlashgan portali',
+                home: 'Bosh sahifa',
+                login: 'Kirish',
+                authMessage: 'Iltimos, tizim sizni aniqlashi uchun avtorizatsiyadan o\'ting. Agar hujjat sizga tegishli bo\'lsa, PIN kodni kiritish talab qilinmaydi.',
+                authLink: 'Avtorizatsiya uchun bosing',
+                pinTitle: 'Hujjatni ko\'rish uchun PIN kodni kiriting',
+                pinLabel: 'PIN kod',
+                submitBtn: 'Ochish',
+                pinInfo: 'PIN kod hujjatning QR kodi yonida joylashgan',
+                frameworkText: 'Yii Framework asosida ishlaydi',
+                errorPinRequired: 'Iltimos, PIN kodni kiriting',
+                errorDocumentNotFound: 'Ҳужжат топилмади'
+            },
+            en: {
+                title: 'Unified Portal of Interactive Public Services',
+                home: 'Home',
+                login: 'Login',
+                authMessage: 'Please log in to let the system identify you. If the document belongs to you, entering a PIN code is not required.',
+                authLink: 'Click here to log in',
+                pinTitle: 'Enter PIN code to view the document',
+                pinLabel: 'PIN code',
+                submitBtn: 'Open',
+                pinInfo: 'PIN code is located next to the document\'s QR code',
+                frameworkText: 'Powered by Yii Framework',
+                errorPinRequired: 'Please enter the PIN code',
+                errorDocumentNotFound: 'Document not found'
+            }
+        };
+
+        // Функция для изменения языка
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.title = translations[lang].title;
+            document.getElementById('home-link').textContent = translations[lang].home;
+            document.getElementById('login-link').textContent = translations[lang].login;
+            document.getElementById('auth-message').textContent = translations[lang].authMessage;
+            document.getElementById('auth-link').textContent = translations[lang].authLink;
+            document.getElementById('pin-title').textContent = translations[lang].pinTitle;
+            document.getElementById('pin-label').textContent = translations[lang].pinLabel;
+            document.getElementById('submit-btn').textContent = translations[lang].submitBtn;
+            document.getElementById('pin-info').textContent = translations[lang].pinInfo;
+            document.getElementById('framework-text').innerHTML = translations[lang].frameworkText;
+            document.getElementById('a_label').textContent = lang + ' ';
+        }
+
+        // Обработчик клика по языковым ссылкам
+        document.querySelectorAll('[data-lang]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                changeLanguage(lang);
+            });
+        });
+
+        // Функция для изменения заголовка сайта
+        function updateSiteTitle() {
+            // Просто меняем заголовок страницы
+            document.title = 'repository.gov.uz';
+        }
+
+        function showError(message) {
+            const helpBlock = document.querySelector('.field-repopinmodel-pin_code .help-block');
+            helpBlock.textContent = message;
+            helpBlock.style.color = '#a94442';
+            const formGroup = document.querySelector('.field-repopinmodel-pin_code');
+            formGroup.classList.add('has-error');
+
+            // Очистить ошибку через 3 секунды
+            setTimeout(() => {
+                helpBlock.textContent = '';
+                formGroup.classList.remove('has-error');
+            }, 3000);
+        }
+
+        function openDocument(event) {
+            event.preventDefault();
+
+            // Получаем PIN-код из поля ввода
+            const pinCode = document.getElementById('repopinmodel-pin_code').value.trim();
+            const currentLang = document.documentElement.lang || 'ru';
+
+            // Проверяем, что PIN-код введен
+            if (!pinCode) {
+                showError(translations[currentLang].errorPinRequired);
+                return;
+            }
+
+            // Открываем документ с введенным PIN-кодом
+            const filePath = `documents/${pinCode}.pdf`;
+            window.open(filePath, '_blank');
+        }
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            // Устанавливаем начальный язык
+            const currentLang = document.documentElement.lang || 'ru';
+            changeLanguage(currentLang);
+
+            // Устанавливаем заголовок страницы
+            updateSiteTitle();
+        });
+    </script>
+</body>
+
+</html>
